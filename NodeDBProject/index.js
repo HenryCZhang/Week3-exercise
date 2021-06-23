@@ -35,6 +35,7 @@ app.get('/',(req,res)=>{
         }
     })
 })
+
 //Get by last_name
 app.get('/GetByLast_name/:last_name',(req,res)=>{
     let sql = `SELECT * FROM students WHERE last_name = '${req.params.last_name}'`;//Why don't need to wrap in ''? What's the value type passed in?
@@ -47,6 +48,7 @@ app.get('/GetByLast_name/:last_name',(req,res)=>{
         }
     })
 })
+
 //Get by ID
 app.get('/GetByID/:id',(req,res)=>{
     let sql = `SELECT * FROM students WHERE id = ${req.params.id}`;//it still works without parseInt()?!!!
@@ -59,9 +61,9 @@ app.get('/GetByID/:id',(req,res)=>{
         }
     })
 })
+
 //Group by department_id
 app.get('/GroupByDepartment_id/:department_id',(req,res)=>{
-    // let sql = `SELECT students.*, departments.title FROM students JOIN ON departments WHERE students.department_id = departments.id = ${req.params.department_id}`;
     let sql = `SELECT * FROM students WHERE students.department_id = ${req.params.department_id}`;
 
     conn.query(sql,(err,result)=>{
@@ -99,6 +101,7 @@ app.put('/FindByID/:id/UpdateAge/:age',(req,res)=>{
         }
     })
 })
+
 //Delete student by id
 app.delete('/DeleteByID/:id',(req,res)=>{
     let sql = `DELETE FROM students WHERE id = ${req.params.id}`;
