@@ -10,7 +10,7 @@ let conn = mysql.createConnection({
     host:'127.0.0.1',
     //host:'localhost',
     user:'Henry',
-    password:'13758981888Zc@',
+    password:'13658981333@',
     database:'microhard'
 })
 
