@@ -37,7 +37,7 @@ app.get('/',(req,res)=>{
 })
 //Get by last_name
 app.get('/GetByLast_name/:last_name',(req,res)=>{
-    let sql = `SELECT * FROM students WHERE last_name = '${req.params.last_name}'`;//Why need to add ''? What's the value type passed in?
+    let sql = `SELECT * FROM students WHERE last_name = '${req.params.last_name}'`;//Why don't need to wrap in ''? What's the value type passed in?
     conn.query(sql,(err,result)=>{
         if(err){
             res.send(err);
