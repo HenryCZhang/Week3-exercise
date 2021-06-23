@@ -57,7 +57,7 @@ app.get('/GetByID/:id',(req,res)=>{
             res.send(err);
         }
         else{
-            res.send(result);
+            res.send(result.pop());//returns a single object
         }
     })
 })
