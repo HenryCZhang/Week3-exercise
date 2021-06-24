@@ -48,7 +48,6 @@ app.get('/findByID/:id',(req,res)=>{
     })
 })
 
-//http://localhost:3000/filter?last_name=A&department_id=1
 //Retireve a single employee by gender and  department_id
 app.get('/filter',(req,res)=>{
     let data = {
